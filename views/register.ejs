@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Registrate</title>
+    <%- include('modules/links') %>
+    <link rel="stylesheet" href="/stylesheets/index.css" />
+  </head>
+  <body>
+    <header>
+<nav class="navbar navbar-expand-lg bg-black ">
+  <div class="container-fluid">
+    <a class="navbar-brand text-white-50" href="/">Inicio</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="d-flex gap-2">
+      <button 
+        class="btn btn-outline-secondary"
+        onclick="window.location.href='/register'"
+        >Registrar</button>
+      </div>
+    </div>
+  </nav>
+    </header>
+    <main>
+      <div class="d-flex justify-content-center p-5 text-light-emphasis">
+        <form 
+          action="/"
+          method="post"
+          class="w-25 border border-1 p-3 m-5" 
+        >
+          <h2>Registrate aquí</h2>
+          <div class="mb-3">
+            <label for="inputName" class="form-label"
+              >Nombre</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="inputName"
+              aria-describedby="nameHelp"
+              name="name"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="inputLastname" class="form-label"
+              >Apellidos</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="inputLastname"
+              aria-describedby="lastnameHelp"
+              name="lastname"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="inputEmail" class="form-label"
+              >Email</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="inputEmail"
+              aria-describedby="emailHelp"
+              name="email"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="inputPassword" class="form-label"
+              >Password</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="inputPassword"
+              name="password"
+            />
+          </div>
+      
+          <div class="mb-3">
+            <label for="inputDescripction" class="form-label"
+              >Descripción</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="inputDescription"
+              aria-describedby="descriptionHelp"
+              name="description"
+            />
+          </div>
+          <p class="msgErr"><%= typeof message != 'undefined' ? message: null %></p>
+          <div class="mb-3">
+            <label for="inputImg" class="form-label">
+                Adjuntar imagen 
+           <i  class="bi bi-image "></i>
+            </label>
+
+            <input
+              type="file"
+              class="form-control"
+              id="inputImg"
+              name="img"
+              hidden
+            />
+          </div>
+          <div class="d-flex gap-2">
+            <button type="submit" class="btn btn-primary">Enviar</button>
+            <button 
+              type="button" 
+              class="btn btn-primary"
+              onclick="window.location.href='/'"
+            >Cancelar</button>
+          </div>
+      
+        </form>
+      </div>
+    </main>
+    
+  </body>
+</html>
